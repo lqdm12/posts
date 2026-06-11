@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro Reels #1 – Converte Médico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #11088E;
+    --lime: #C0FF4C;
+    --ink: #0F172A;
+    --gray: #64748B;
+    --line: #E2E8F0;
+    --bg: #F8FAFC;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Libre Franklin', system-ui, -apple-system, sans-serif;
+    background: #FFFFFF;
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  
+  /* HEADER */
+  .header {
+    background: var(--blue);
+    color: white;
+    padding: 56px 24px 48px;
+    position: relative;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(192,255,76,0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(192,255,76,0.15);
+    border: 1px solid rgba(192,255,76,0.4);
+    color: var(--lime);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .badge-dot {
+    width: 6px; height: 6px; background: var(--lime); border-radius: 50%;
+    box-shadow: 0 0 10px var(--lime);
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: clamp(15px, 2.5vw, 18px);
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+    max-width: 600px;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  section { margin-top: 56px; }
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(20px, 3vw, 26px);
+    color: var(--blue);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .section-title::before {
+    content: '';
+    width: 6px;
+    height: 28px;
+    background: var(--lime);
+    border-radius: 3px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 4px 14px rgba(17,8,142,0.05);
+  }
+
+  /* OBJETIVO */
+  .objetivo {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FBFDFF 100%);
+    border-left: 6px solid var(--lime);
+    padding: 24px 28px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+  }
+  .objetivo p {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .highlight {
+    background: var(--lime);
+    color: var(--blue);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* TABELA */
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(17,8,142,0.04);
+  }
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 560px;
+    background: white;
+  }
+  thead th {
+    background: var(--blue);
+    color: white;
+    text-align: left;
+    padding: 16px 20px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  thead th:first-child { border-top-left-radius: 14px; }
+  thead th:last-child { border-top-right-radius: 14px; }
+  tbody td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #FCFEFD; }
+  td.time {
+    font-weight: 700;
+    color: var(--blue);
+    white-space: nowrap;
+    font-family: 'League Spartan', sans-serif;
+  }
+  td.fase {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ROTEIRO */
+  .scenes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .scene {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(2,6,23,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .scene:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(17,8,142,0.08); }
+  .scene-head {
+    background: var(--blue);
+    color: white;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .scene-head h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+  .time-badge {
+    background: var(--lime);
+    color: var(--blue);
+    font-weight: 800;
+    font-family: 'League Spartan', sans-serif;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .scene-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 12px; }
+  .line { font-size: 14.5px; }
+  .line strong {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray);
+    margin-bottom: 3px;
+    font-weight: 600;
+  }
+  .line.fala {
+    background: #F6FFEA;
+    border-left: 3px solid var(--lime);
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-style: italic;
+    color: #0B1A00;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* LISTAS */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .list-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .list-card li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 15px;
+  }
+  .check {
+    flex-shrink: 0;
+    width: 20px; height: 20px;
+    background: var(--lime);
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    margin-top: 2px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .check svg { width: 12px; height: 12px; stroke: var(--blue); stroke-width: 3; }
+
+  /* GANCHOS */
+  .hooks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .hook {
+    border: 1px dashed var(--blue);
+    background: #F9F9FF;
+    padding: 20px;
+    border-radius: 14px;
+    position: relative;
+  }
+  .hook-num {
+    position: absolute;
+    top: -10px; left: 16px;
+    background: var(--blue);
+    color: white;
+    font-family: 'League Spartan';
+    font-weight: 700;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .hook p { font-weight: 600; font-size: 16px; color: var(--blue); margin-top: 4px; }
+
+  /* CHECKLIST */
+  .checklist { display: grid; gap: 10px; }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: white;
+    font-size: 14.5px;
+  }
+  .check-item input {
+    width: 18px; height: 18px;
+    accent-color: var(--blue);
+    flex-shrink: 0;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray);
+    font-size: 13px;
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+  }
+
+  @media (max-width: 640px) {
+    .header { padding: 40px 20px 36px; }
+    .container { padding: 0 16px 60px; }
+    .card { padding: 20px; }
+    section { margin-top: 40px; }
+  }
+
+  @media print {
+    body { background: white; }
+    .header { box-shadow: none; }
+    .card, .scene, .table-wrap { box-shadow: none !important; break-inside: avoid; }
+    section { margin-top: 32px; page-break-inside: avoid; }
+    .scene { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="badge"><span class="badge-dot"></span> Documento de Produção</div>
+      <h1>ROTEIRO REELS #1 – CONVERTE MÉDICO</h1>
+      <p class="subtitle">História da empresa reescrita para retenção e conversão</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- OBJETIVO -->
+    <section>
+      <h2 class="section-title">Objetivo</h2>
+      <div class="objetivo">
+        <p>Primeiro Reels. <strong>Não vender empresa, vender problema do médico.</strong> Gerar comentários <span class="highlight">POLVO</span>.</p>
+      </div>
+    </section>
+
+    <!-- ESTRUTURA -->
+    <section>
+      <h2 class="section-title">Estrutura de Retenção</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Tempo</th>
+              <th>Fase</th>
+              <th>Objetivo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="time">0-3s</td>
+              <td class="fase">Hook de Dor</td>
+              <td>Pergunta que médico reconhece</td>
+            </tr>
+            <tr>
+              <td class="time">3-8s</td>
+              <td class="fase">Agitação</td>
+              <td>Mostra frustração</td>
+            </tr>
+            <tr>
+              <td class="time">8-15s</td>
+              <td class="fase">Mecanismo Único</td>
+              <td>Apresenta polvo 8 braços</td>
+            </tr>
+            <tr>
+              <td class="time">15-22s</td>
+              <td class="fase">Prova Rápida</td>
+              <td>Credibilidade</td>
+            </tr>
+            <tr>
+              <td class="time">22-32s</td>
+              <td class="fase">CTA com Isca</td>
+              <td>Comentário</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ROTEIRO -->
+    <section>
+      <h2 class="section-title">Roteiro Detalhado</h2>
+      <div class="scenes">
+        
+        <article class="scene">
+          <div class="scene-head">
+            <h3>1. HOOK</h3>
+            <span class="time-badge">0-3s</span>
+          </div>
+          <div class="scene-body">
+            <div class="line"><strong>Visual</strong>Tela preta texto lima</div>
+            <div class="line fala"><strong>Fala</strong>“Seu consultório tem Instagram bonito... mas agenda vazia?”</div>
+            <div class="line"><strong>Obs</strong>Print perfil com 0 curtidas</div>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-head">
+            <h3>2. AGITAÇÃO</h3>
+            <span class="time-badge">3-7s</span>
+          </div>
+          <div class="scene-body">
+            <div class="line"><strong>Visual</strong>Você falando</div>
+            <div class="line fala"><strong>Fala</strong>“Eu era o cara do site. Fazia página linda que não gerava paciente nenhum.”</div>
+            <div class="line"><strong>Obs</strong>Texto "Site bonito ≠ paciente"</div>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-head">
+            <h3>3. MECANISMO</h3>
+            <span class="time-badge">7-12s</span>
+          </div>
+          <div class="scene-body">
+            <div class="line"><strong>Visual</strong>Animação polvo</div>
+            <div class="line fala"><strong>Fala</strong>“Até entender que médico não precisa de 1 canal. Precisa de 8.”</div>
+            <div class="line"><strong>Obs</strong>Polvo azul #11088E virando ícones</div>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-head">
+            <h3>4. PROVA</h3>
+            <span class="time-badge">12-18s</span>
+          </div>
+          <div class="scene-body">
+            <div class="line"><strong>Visual</strong>Você + Emily</div>
+            <div class="line fala"><strong>Fala</strong>“Por isso chamei a Emily, estudante de medicina. Ela entende CFM, eu entendo conversão.”</div>
+            <div class="line"><strong>Obs</strong>Legenda dupla</div>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-head">
+            <h3>5. ORIGEM</h3>
+            <span class="time-badge">18-24s</span>
+          </div>
+          <div class="scene-body">
+            <div class="line"><strong>Visual</strong>Tela celular</div>
+            <div class="line fala"><strong>Fala</strong>“Juntamos e criamos a Converte Médico. Não é agência, é sistema.”</div>
+            <div class="line"><strong>Obs</strong>WhatsApp lotado</div>
+          </div>
+        </article>
+
+        <article class="scene">
+          <div class="scene-head">
+            <h3>6. CTA</h3>
+            <span class="time-badge">24-32s</span>
+          </div>
+          <div class="scene-body">
+            <div class="line"><strong>Visual</strong>CTA</div>
+            <div class="line fala"><strong>Fala</strong>“Primeiro Reels, primeiro presente: vou analisar seu Instagram de graça. Comenta POLVO aqui que eu te chamo no direct”</div>
+            <div class="line"><strong>Obs</strong>Texto animado POLVO</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ELEMENTOS -->
+    <section>
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title">Elementos Visuais</h2>
+          <div class="card list-card">
+            <ul>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span><div><strong>Cores:</strong> Fundo #11088E, destaque #C0FF4C, texto branco. Alto contraste.</div></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span><div><strong>Legendas:</strong> Sempre ativas, Libre Franklin Bold. Palavras-chave “POLVO”, “8 braços”, “agenda vazia” em LIMA.</div></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span><div><strong>Cortes:</strong> Jump cut a cada 1,2s-1,8s. Zoom in 105% nos pontos de dor.</div></li>
+              <li><span class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></span><div><strong>Roupa/Cenário:</strong> Camisa preta lisa, fundo clean. Evitar jaleco (parecer venda).</div></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2 class="section-title">3 Ganchos para Testar</h2>
+          <div class="hooks">
+            <div class="hook">
+              <span class="hook-num">01</span>
+              <p>“Seu Instagram é lindo. Sua agenda também?”</p>
+            </div>
+            <div class="hook">
+              <span class="hook-num">02</span>
+              <p>“Paguei R$ 8 mil num site que não trouxe 1 paciente”</p>
+            </div>
+            <div class="hook">
+              <span class="hook-num">03</span>
+              <p>“Médico não precisa de agência. Precisa de um POLVO”</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section>
+      <h2 class="section-title">Checklist de Publicação</h2>
+      <div class="card">
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox"> Gravar hook 0-3s em tela preta + texto lima animado</label>
+          <label class="check-item"><input type="checkbox"> Inserir print real de perfil médico com baixo engajamento</label>
+          <label class="check-item"><input type="checkbox"> Animar polvo #11088E com 8 ícones (IG, Google, Site, WhatsApp, Vídeo, Ads, Email, Indicação)</label>
+          <label class="check-item"><input type="checkbox"> Legendar 100% (CapCut auto + revisão CFM)</label>
+          <label class="check-item"><input type="checkbox"> Adicionar SFX de comentário ao falar “POLVO”</label>
+          <label class="check-item"><input type="checkbox"> Descrição com CTA: “Comenta POLVO” + fixar comentário</label>
+          <label class="check-item"><input type="checkbox"> Postar entre 18h-21h e responder todos comentários em 60min</label>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Converte Médico © 2024 — Roteiro Reels #1 | Sistema de 8 Braços
+  </footer>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>
